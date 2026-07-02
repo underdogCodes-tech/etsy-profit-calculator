@@ -1,4 +1,18 @@
 import streamlit as st
+
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
+if not st.session_state.authenticated:
+    st.title("🛍️ Etsy Profit Calculator")
+    password = st.text_input("Enter access password", type="password")
+    if password == "etsy2024":
+        st.session_state.authenticated = True
+        st.rerun()
+    elif password:
+        st.error("Incorrect password. Purchase at radhetools on Gumroad to get access.")
+    st.stop()
+    
 from calculator import calculate_monthly, calculate_profit
 
 st.set_page_config(page_title="Etsy Profit Calculator",page_icon="🛍️")
