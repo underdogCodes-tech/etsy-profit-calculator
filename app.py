@@ -10,7 +10,7 @@ if not st.session_state.authenticated:
         st.session_state.authenticated = True
         st.rerun()
     elif password:
-        st.error("Incorrect password. Purchase at radhetools on Gumroad to get access.")
+        st.error("Incorrect password. Purchase at radhetools.gumroad.com/l/etsy-profit-calculator on Gumroad to get access.")
     st.stop()
     
 from calculator import calculate_monthly, calculate_profit
